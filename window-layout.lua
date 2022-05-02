@@ -94,6 +94,14 @@ if hs.window.focusedWindow():screen():frame().w >  2560 then
     h = function(h) return h/2 - gutter end
     })
   end)
+
+  hs.hotkey.bind({"cmd", "shift", "ctrl"}, "Down", function()
+    transformWindow({
+    x = function(x,screen) return x + (screen.w/3) + gutter end,
+    w = function(w) return w/3 - gutter end,
+    h = function(h) return h/2 - gutter end
+    })
+  end)
 else 
   hs.hotkey.bind({"cmd", "ctrl"}, "Left", function()
     transformWindow({
